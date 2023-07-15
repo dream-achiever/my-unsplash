@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/header/Header.js";
 
 function App() {
+  const isMobileDevice = useMediaQuery({ query: "(max-width: 450px)" });
+  const isTabletDevice = useMediaQuery({
+    query: "(min-width: 451px) and (max-width: 1200px)",
+  });
+  const isLaptop = useMediaQuery({
+    query: "(min-width: 1201px) and (max-width: 1600px)",
+  });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1601px)" });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header className="App-header"></Header>
     </div>
   );
 }
